@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Stuff on the left -->
+
+    <TextView
+        android:id="@+id/tvBillTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="54dp"
+        android:text="Bill Total"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTipAmount"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tvBillTotal"
+        app:layout_constraintTop_toBottomOf="@+id/tvBillTotal"
+        tools:text="20%" />
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Tip Amount"
+        app:layout_constraintEnd_toEndOf="@id/tvBillTotal"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipAmount" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Total"
+        app:layout_constraintEnd_toEndOf="@id/tvBillTotal"
+        app:layout_constraintTop_toBottomOf="@+id/tvTip" />
+
+    <!-- Stuff on the right -->
+
+    <EditText
+        android:id="@+id/etBillTotal"
+        android:layout_width="203dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="32dp"
+        android:ems="8"
+        android:hint="Bill Amount"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/tvBillTotal"
+        app:layout_constraintTop_toTopOf="@id/tvBillTotal"
+        app:layout_constraintBottom_toBottomOf="@id/tvBillTotal" />
+
+    <SeekBar
+        android:id="@+id/seekTipAmount"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:max="30"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTipAmount"
+        app:layout_constraintStart_toStartOf="@+id/etBillTotal"
+        app:layout_constraintTop_toTopOf="@+id/tvTipAmount" />
+
+    <TextView
+        android:id="@+id/tvTipAmountDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTip"
+        app:layout_constraintStart_toStartOf="@+id/seekTipAmount"
+        app:layout_constraintTop_toTopOf="@+id/tvTip"
+        tools:text="Tip Amount" />
+
+    <TextView
+        android:id="@+id/tvTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotal"
+        app:layout_constraintStart_toStartOf="@+id/tvTipAmountDisplay"
+        app:layout_constraintTop_toTopOf="@+id/tvTotal"
+        tools:text="Total" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
